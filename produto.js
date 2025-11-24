@@ -22,11 +22,14 @@ class produto {
     getExibirInformações() {
         return this.#descrição;
     };
-    setCalcularDesconto(percentual) {
-
+  setCalcularDesconto(percentual) {
+        if ( percentual <= 0) 
+            return percentual = this.#preço; 
+        
         const desconto = this.#preço * (percentual / 100);
         return this.#preço - desconto;
     };
-}
+};
+module.exports = produto
 const Arroz = new produto('Arroz', 5, 'Alimento', 'Arroz branco tipo 1');
-console.log(Arroz.setCalcularDesconto(90, 10));
+console.log(Arroz.setCalcularDesconto(0));
