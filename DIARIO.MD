@@ -18,4 +18,19 @@ Arquivos ou partes do código alterados:
 ./Sitema de loja Online/produto.js
 Commits relacionados:
 Criação da class Produto e métodos de sugestão;
+
 Teste dos métodos.
+
+Registros de Atividades
+23/11/2025
+Integrantes: João Daniel
+
+Resumo: Hoje foi criada a subclass produtoEletronico, com um método reescrito, exportar e importar as class e modificar
+o método calcularDesconto. E foi realizado alguns testes.
+Arquivos ou partes do código alterados:
+./Sitema de loja Online/produto.js
+./Sistema de loja Online/produtoEletronico.js
+Commits relacionados:
+Criação da class produtoEletronico e métodos reescrito, getExibirInformações.
+
+
