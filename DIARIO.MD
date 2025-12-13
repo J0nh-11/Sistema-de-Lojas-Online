@@ -34,3 +34,8 @@ console:
 7
 
 Irei resolver essa questão logo logo.
+
+Registros de Atividades 13/12/2025
+
+Resumo: Consegui resolver os problemas anteriorer, além de finalizar as subclass e deixar tudo funcionando de forma coerente.
+A maior dificuldade agr vai ser fazer a interface no console e deixar os itens armazendos no carrinho, somar tudo e mandar p/ o cliente.

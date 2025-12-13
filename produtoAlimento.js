@@ -1,11 +1,10 @@
-const produto = require("./produto");
+const Produto = require("./produto");
 
-class produtoAlimento extends produto {
+class ProdutoAlimento extends Produto {
     constructor(nome, preço, categoria, descrição, validade) {
         super(nome, preço, categoria, descrição);
         this.validade = validade;
     }
-}
+};
 
-const feijao = new produtoAlimento('Feijão', 7, 'Alimento', 'Feijão carioca tipo 1', '2024-12-31');
-console.log(feijao.setCalcularDesconto(0));
+module.exports = ProdutoAlimento;
