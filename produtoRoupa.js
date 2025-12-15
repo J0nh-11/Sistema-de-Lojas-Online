@@ -6,7 +6,9 @@ class ProdutoRoupa extends Produto {
         this.tamanho = tamanho;
         this.material = material;
     }
-
+    setDescontoFixo() {
+        this.setCalcularDesconto(10);
+    }
 };
 
 module.exports = ProdutoRoupa;

@@ -39,3 +39,8 @@ Registros de Atividades 13/12/2025
 
 Resumo: Consegui resolver os problemas anteriorer, além de finalizar as subclass e deixar tudo funcionando de forma coerente.
 A maior dificuldade agr vai ser fazer a interface no console e deixar os itens armazendos no carrinho, somar tudo e mandar p/ o cliente.
+
+ATIVIDADES DE 14/12/2025
+
+RESUMO: Percebi que meu nívrl de programação é muito baixo e falta melhorar, consegui implementar novas funcionalidades, porém é complicado fazer um código simples de interface no console. Modifiquei o arquivo main.js, produtoAlimento.js e produtoRoupa.js, fora que preciso comentar o código que acabei esquecendo. Olhei novamente o pdf do tema e percebi que ainda falta resolver a questão do fluxo da loja. Fazer as class foi fácil, porém pensar para o fluxo da loja tá complicado.
+Todavia amanhã pe outro dia e compensarei esse trabalho.

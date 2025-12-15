@@ -8,7 +8,7 @@ class ProdutoAlimento extends Produto {
     //Verifica a data de validade do alimento
      valodadeDoAlimento = dataValidade => {
         let data = dataValidade;
-        for (let i = 0; i < 20122025; i++) {
+        for (let i = 0; i < 2027; i++) {
             if (data <= data[i])
                 return `Data de validade do alimento: ${data}`;
             else {
