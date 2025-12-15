@@ -6,7 +6,7 @@ class ProdutoAlimento extends Produto {
         this.validade = validade;
     }
     //Verifica a data de validade do alimento
-     valodadeDoAlimento = dataValidade => {
+     valodadeDoAlimento(dataValidade)  {
         let data = dataValidade;
         for (let i = 0; i < 2027; i++) {
             if (data <= data[i])
@@ -16,6 +16,9 @@ class ProdutoAlimento extends Produto {
             }
         }
     }
+        getExibirInformações() {
+        return `Nome: ${this.getNome()}\nPreço: R$${this.getPreço().toFixed(2)}\nCategoria: ${this.getCategoria()}\nDescrição: ${this.getDescricao()}\n`;
+    };
 };
 
 module.exports = ProdutoAlimento;

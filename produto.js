@@ -19,8 +19,11 @@ class Produto {
     getCategoria() {
         return this.#categoria;
     };
-    getExibirInformações() {
+    getDescricao() {
         return this.#descrição;
+    }
+    getExibirInformações() {
+        return `Nome: ${this.#nome}\nPreço: R$${this.#preço.toFixed(2)}\nCategoria: ${this.#categoria}\nDescrição: ${this.#descrição}`;
     };
     setCalcularDesconto(percentual) {
         if (percentual <= 0)

@@ -9,6 +9,9 @@ class ProdutoRoupa extends Produto {
     setDescontoFixo() {
         this.setCalcularDesconto(10);
     }
+        getExibirInformações() {
+            return super.getExibirInformações() + `\nTamanho: ${this.tamanho}\nMaterial: ${this.material}\n`;
+    };
 };
 
 module.exports = ProdutoRoupa;

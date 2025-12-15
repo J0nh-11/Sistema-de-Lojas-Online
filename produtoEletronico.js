@@ -1,5 +1,5 @@
-const paiProduto = require('./produto.js');
-const Produto = paiProduto;
+const Produto = require('./produto.js');
+
 class ProdutoEletronico extends Produto {
     #voltagem;
     #garantia;
@@ -9,7 +9,7 @@ class ProdutoEletronico extends Produto {
         this.#garantia = garantia;
     }
     getExibirInformações() {
-        return `${super.getExibirInformações()} - Voltagem:  ${this.#voltagem} - Garantia: ${this.#garantia}`;
+        return `${super.getExibirInformações()} - Voltagem:  ${this.#voltagem} - Garantia: ${this.#garantia}\n`;
     }
 }
 
