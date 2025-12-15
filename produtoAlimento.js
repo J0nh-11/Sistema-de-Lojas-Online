@@ -5,6 +5,17 @@ class ProdutoAlimento extends Produto {
         super(nome, preço, categoria, descrição);
         this.validade = validade;
     }
+    //Verifica a data de validade do alimento
+     valodadeDoAlimento = dataValidade => {
+        let data = dataValidade;
+        for (let i = 0; i < 20122025; i++) {
+            if (data <= data[i])
+                return `Data de validade do alimento: ${data}`;
+            else {
+                return `Alimento vencido`;
+            }
+        }
+    }
 };
 
 module.exports = ProdutoAlimento;
