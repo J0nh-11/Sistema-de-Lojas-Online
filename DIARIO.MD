@@ -42,5 +42,10 @@ A maior dificuldade agr vai ser fazer a interface no console e deixar os itens a
 
 ATIVIDADES DE 14/12/2025
 
-RESUMO: Percebi que meu nívrl de programação é muito baixo e falta melhorar, consegui implementar novas funcionalidades, porém é complicado fazer um código simples de interface no console. Modifiquei o arquivo main.js, produtoAlimento.js e produtoRoupa.js, fora que preciso comentar o código que acabei esquecendo. Olhei novamente o pdf do tema e percebi que ainda falta resolver a questão do fluxo da loja. Fazer as class foi fácil, porém pensar para o fluxo da loja tá complicado.
+RESUMO: Percebi que meu nível de programação é muito baixo e falta melhorar, consegui implementar novas funcionalidades, porém é complicado fazer um código simples de interface no console. Modifiquei o arquivo main.js, produtoAlimento.js e produtoRoupa.js, fora que preciso comentar o código que acabei esquecendo. Olhei novamente o pdf do tema e percebi que ainda falta resolver a questão do fluxo da loja. Fazer as class foi fácil, porém pensar para o fluxo da loja tá complicado.
 Todavia amanhã pe outro dia e compensarei esse trabalho.
+
+Atividades de 15/12/2025
+
+Resumo: Modifiquei o código e comentei algumas coisas; aprendi a usar o switch p/ fazer os menus e algo que esqueci de avisar anteriormente: "NA DATA 07/12/2025", EU COMECEI A UTILIZAR O GIT E GITHUB E REALIZAR OS COMMITS E ATUALIZAÇÕES!!
+Trabalhei em todos os arquivos do projetos (clases) e criei novos métodos e corriji o código. O código utiliza uma biblioteca, 'prompt-sync'. Consegui otimizar o código e melhorar o código, porém falta resolver algumas funcionlidades.
