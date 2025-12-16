@@ -49,3 +49,9 @@ Atividades de 15/12/2025
 
 Resumo: Modifiquei o código e comentei algumas coisas; aprendi a usar o switch p/ fazer os menus e algo que esqueci de avisar anteriormente: "NA DATA 07/12/2025", EU COMECEI A UTILIZAR O GIT E GITHUB E REALIZAR OS COMMITS E ATUALIZAÇÕES!!
 Trabalhei em todos os arquivos do projetos (clases) e criei novos métodos e corriji o código. O código utiliza uma biblioteca, 'prompt-sync'. Consegui otimizar o código e melhorar o código, porém falta resolver algumas funcionlidades.
+
+15/12/2025 às 23:50
+
+Resumo: Realizei a criação de novos métodos e conecções, nunca imaginei que seria algo tão complicado na prática, ficar ligando (Exportando e importando), arquivos para utilização de clases. 
+Uma nova lição aprendida hoje, nuca procrastine, recebeu o projeto, realize. O prazo de 1 mês era o surficiente para realizar o projeto, porém, preciso começar a me organizar melhor quanto a isso.
+Para que eu consiga ser um bom profissional. Boa parte do código foi melhorada e comentada!
