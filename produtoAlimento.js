@@ -7,17 +7,16 @@ class ProdutoAlimento extends Produto {
     }
     //Verifica a data de validade do alimento
      setValodadeDoAlimento(dataValidade)  {
-        let data = dataValidade;
-        for (let i = 0; i < 2027; i++) {
-            if (data <= data[i])
-                return `Data de validade do alimento: ${data}`;
-            else {
-                return `Alimento vencido`;
-            }
+        const hoje = new Date();
+        const validade = new Date(dataValidade);
+        if (validade >= hoje) {
+            return `Data de validade do alimento: ${dataValidade}`;
+        } else {
+            return `Alimento vencido`;
         }
     }
         getExibirInformações() {
-        return `${super.getExibirInformações()} Validade: ${this.setValodadeDoAlimento()}\n`;
+        return `${super.getExibirInformações()} Validade: ${this.setValodadeDoAlimento(this.validade)}\n`;
     };
 };
 

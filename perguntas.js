@@ -17,13 +17,13 @@ class Perguntas {
     4 - Simular compra;\n `);
         switch (this.escolha) {
             case '1': {
-                GerenciandoLoja.cadastrarProduto();
                 console.log("Você escolheu a opção: Cadastrar produto\n");
+                this.perguntaDoCarrinho()
                 break;
             }
             case '2': {
-                GerenciandoLoja.listaHistoricoProduto();
                 console.log("Você escolheu a opção: Listar produto\n");
+                GerenciandoLoja.listaHistoricoProduto();
                 break;
             }
             case '3': {
@@ -87,7 +87,7 @@ class Perguntas {
         let nomeCliente = prompt("Por favor, digite seu nome: ");
         return nomeCliente;
     }
-    static perguntaDoCarrinho() {
+    perguntaDoCarrinho() {
         this.escolha =
             prompt(`Escolha a categoria do produto que você quer adicionar?\n
              1 - Alimentos;\n
@@ -120,17 +120,17 @@ class Perguntas {
                 break;
         }
     }
-    static perguntasAlimentos() {
+    perguntasAlimentos() {
         let nome = prompt("Digite o nome do alimento: ");
         let preço = parseFloat(prompt("Digite o preço do alimento: "));
         let categoria = prompt("Digite a categoria do alimento: ");
         let descrição = prompt("Digite a descrição do alimento: ");
-        let validade = prompt("Digite a validade do alimento (xxxx 'Ano do produto.'): ");
+        let validade = prompt("Digite a validade do alimento (ANO-MÊS-DIA'): ");
         const alimento = new ProdutoAlimento(nome, preço, categoria, descrição, validade);
         console.log("Alimento cadastrado!\n");
         GerenciandoLoja.cadastrarProduto() = alimento;
     }
-    static perguntaEletronicos() {
+    perguntaEletronicos() {
         let nome = prompt("Digite o nome do eletrônico: ");
         let preço = parseFloat(prompt("Digite o preço do eletrônico: "));
         let categoria = prompt("Digite a categoria do eletrônico: ");
@@ -141,7 +141,7 @@ class Perguntas {
         console.log("Eletrônico cadastrado!\n");
         GerenciandoLoja.cadastrarProduto() = eletronico;
     }
-    static perguntaRoupas() {
+    perguntaRoupas() {
         let nome = prompt("Digite o nome da roupa: ");
         let preço = parseFloat(prompt("Digite o preço da roupa: "));
         let categoria = prompt("Digite a categoria da roupa: ");

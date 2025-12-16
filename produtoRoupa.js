@@ -5,8 +5,8 @@ class ProdutoRoupa extends Produto {
     #material;
     constructor(nome, preço, categoria, descrição, tamanho, material) {
         super(nome, preço, categoria, descrição);
-        this.tamanho = tamanho;
-        this.material = material;
+        this.#tamanho = tamanho;
+        this.#material = material;
     }
     getTamanho() {
         return this.#tamanho;
@@ -18,7 +18,7 @@ class ProdutoRoupa extends Produto {
         this.setCalcularDesconto(10);
     }
         getExibirInformações() {
-            return `${super.getExibirInformações()} \nTamanho: ${this.getTamanho}\nMaterial: ${this.getMaterial}\n`;
+            return `${super.getExibirInformações()} \nTamanho: ${this.getTamanho()}\nMaterial: ${this.getMaterial()}\n`;
     };
 };
 
