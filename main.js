@@ -4,6 +4,7 @@ const ProdutoEletronico = require('./produtoEletronico.js');
 const ProdutoAlimento = require('./produtoAlimento.js');
 const EstoqueProdutos = require('./estoqueProdutos.js');
 const Perguntas = require('./perguntas.js');
+const GerenciandoLoja = require('./gerenciandoLoja.js');
 
 //class main, sistema da loja:
 class Main {

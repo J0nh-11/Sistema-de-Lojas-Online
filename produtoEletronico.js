@@ -8,8 +8,14 @@ class ProdutoEletronico extends Produto {
         this.#voltagem = voltagem;
         this.#garantia = garantia;
     }
+    getVolts() {
+        return this.#voltagem;
+    }
+    getGarantia() {
+        return this.#garantia;
+    }
     getExibirInformações() {
-        return `${super.getExibirInformações()} - Voltagem:  ${this.#voltagem} - Garantia: ${this.#garantia}\n`;
+        return `${super.getExibirInformações()} - Volts:  ${this.getVolts()} - Garantia: ${this.getGarantia()}\n`;
     }
 }
 

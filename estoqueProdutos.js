@@ -5,7 +5,7 @@ const produtoAlimento = require('./produtoAlimento.js');
 
 class EstoqueProdutos{
 //Método de compra de roupas
-    compraRoupa() {
+    static compraRoupa() {
         //Cria e apresenta os produtos
         console.clear();
         const roupa1 = new produtoRoupa("Camiseta", 50.00, "Roupas", "Camiseta de algodão", "M", "Algodão");
@@ -16,7 +16,7 @@ class EstoqueProdutos{
             roupa3.getExibirInformações()), '\n\n';
     }
     //Método de compra de eletrônicos
-    compraEletronico() {
+    static compraEletronico() {
         //Cria e apresenta os produtos
         console.clear();
         const eletronico1 = new produtoEletronico("Smartphone", 1500.00, "Eletrônicos", "Smartphone com 128GB", "MarcaX", 24);
@@ -27,7 +27,7 @@ class EstoqueProdutos{
             eletronico3.getExibirInformações()), '\n';
     }
     //Método de compra de alimentos
-    compraAlimento() {
+    static compraAlimento() {
         //Cria e apresenta os produtos
         console.clear();
         const alimento1 = new produtoAlimento("Arroz", 20.00, "Alimentos", "Pacote de arroz 5kg", "2024-12-31");
