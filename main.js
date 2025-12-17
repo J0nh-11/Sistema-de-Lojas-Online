@@ -4,7 +4,6 @@ const ProdutoEletronico = require('./produtoEletronico.js');
 const ProdutoAlimento = require('./produtoAlimento.js');
 const EstoqueProdutos = require('./estoqueProdutos.js');
 const Perguntas = require('./perguntas.js');
-const GerenciandoLoja = require('./gerenciandoLoja.js');
 
 //class main, sistema da loja:
 class Main {
@@ -14,44 +13,28 @@ class Main {
     }
     //Método que inicia o sistema da loja
     iniciar() {
-
         console.log("Bem vindo a loja!");
         //Instância do prompt para perguntar o nome do cliente
-        const nomeCliente = sistemaLoja.Perguntas.perguntaNomeCliente();
+        const nomeCliente = this.perguntas.perguntaNomeCliente();
         console.log(`Olá ${nomeCliente}, seja bem vindo(a) a nossa loja!\n`);
-        sistemaLoja.Perguntas.perguntaDaOpcaoMenu();
+        this.perguntas.perguntaDaOpcaoMenu();
     }
 
     //Método do menu de compra
     menuCompra() {
-       perguntaDaCompra();
+        this.perguntas.perguntaDaCompra();
     }
+
     //Menu principal
     menuPrincipal() {
-        /**Cadastrar produto
-Listar produtos
-Buscar produto
-Simular compra */
-        perguntaDaOpcaoMenu();
-}
-    cadastrarProduto() {
-        this.escolha = prompt(`
-            Qual produto você quer cadastrar?
-            1 - Roupa;\n
-            2 - Eletrônico;\n 
-            2 - Alimento;\n 
-            4 - Voltar ao menu principal;\n `);
-        switch (this.escolha) {
-            case '1': {
-                this.cadastrar.push()
-            }
-        }
+        this.perguntas.perguntaDaOpcaoMenu();
     }
 }
 
 module.exports = Main;
+
 //Inicia o sistema da loja
 const sistemaLoja = new Main();
-sistemaLoja.Perguntas = new Perguntas();
+sistemaLoja.perguntas = new Perguntas();
 sistemaLoja.iniciar();
 

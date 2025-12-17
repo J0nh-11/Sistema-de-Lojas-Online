@@ -5,7 +5,6 @@ const Produto = require('./produto.js');
 const ProdutoRoupa = require('./produtoRoupa.js');
 const ProdutoEletronico = require('./produtoEletronico.js');
 const ProdutoAlimento = require('./produtoAlimento.js');
-const GerenciandoLoja = require('./gerenciandoLoja.js');
 
 
 class Perguntas {
@@ -14,26 +13,32 @@ class Perguntas {
     1 - Cadastrar produto;
     2 - Listar produtos;
     3 - Buscar produto;
-    4 - Simular compra;\n `);
+    4 - Simular compra;
+    5 - Sair do programa. \n `);
         switch (this.escolha) {
             case '1': {
                 console.log("Você escolheu a opção: Cadastrar produto\n");
-                this.perguntaDoCarrinho()
+                this.perguntaDoCarrinho();
                 break;
             }
             case '2': {
                 console.log("Você escolheu a opção: Listar produto\n");
-                GerenciandoLoja.listaHistoricoProduto();
+                EstoqueProdutos.getExibirInformaçõesDaLista();
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '3': {
                 console.log("Você escolheu a opção: Buscar produto\n");
-                GerenciandoLoja.buscarProduto();
+                EstoqueProdutos.buscaPorCategoriaOuNome();
                 break;
             }
             case '4': {
                 console.log("Você escolheu a opção: Simular compra\n");
                 this.perguntaDaCompra();
+                break;
+            }
+            case '5': {
+                console.log("Obrigado, volte sempre!");
                 break;
             }
             default: console.log("Opção inválida. Por favor, escolha uma opção válida.");
@@ -48,29 +53,41 @@ class Perguntas {
     2 - Eletrônicos;
     3 - Alimentos;
     4 - Carrinho;
-    5 - Voltr o inicio;\n `);
+    5 - Voltar o inicio;\n `);
         console.clear();
         switch (this.escolha) {
             case '1': {
                 console.clear();
                 console.log("Você escolheu a opção: Roupas\n");
                 EstoqueProdutos.compraRoupa();
+                prompt("Pressione Enter para voltar ao menu...");
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '2': {
                 console.log("Você escolheu a opção: Eletrônicos\n");
                 EstoqueProdutos.compraEletronico();
+                prompt("Pressione Enter para voltar ao menu...");
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '3': {
                 console.log("Você escolheu a opção: Alimentos\n");
                 EstoqueProdutos.compraAlimento();
+                prompt("Pressione Enter para voltar ao menu...");
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '4': {
-
                 console.log("Você escolheu a opção: Carrinho\n");
-                EstoqueProdutos.carrinhoProduto();
+                if (EstoqueProdutos.produtos.length > 0) {
+                    console.log("Produtos no carrinho:");
+                    EstoqueProdutos.produtos.forEach(prod => console.log(prod.getExibirInformações()));
+                } else {
+                    console.log("Carrinho vazio.");
+                }
+                prompt("Pressione Enter para voltar ao menu...");
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '5': {
@@ -125,10 +142,12 @@ class Perguntas {
         let preço = parseFloat(prompt("Digite o preço do alimento: "));
         let categoria = prompt("Digite a categoria do alimento: ");
         let descrição = prompt("Digite a descrição do alimento: ");
-        let validade = prompt("Digite a validade do alimento (ANO-MÊS-DIA'): ");
+        let validade = prompt("Digite a validade do alimento (ANO-MÊS-DIA): ");
         const alimento = new ProdutoAlimento(nome, preço, categoria, descrição, validade);
+        EstoqueProdutos.adicionarNoCarrinho(alimento);
         console.log("Alimento cadastrado!\n");
-        GerenciandoLoja.cadastrarProduto() = alimento;
+        prompt("Pressione Enter para continuar...");
+        this.perguntaDaOpcaoMenu();
     }
     perguntaEletronicos() {
         let nome = prompt("Digite o nome do eletrônico: ");
@@ -138,8 +157,10 @@ class Perguntas {
         let voltagem = prompt("Digite a voltagem do eletrônico (110V ou 220V): ");
         let garantia = prompt("Digite a garantia do eletrônico (em meses): ");
         const eletronico = new ProdutoEletronico(nome, preço, categoria, descrição, voltagem, garantia);
+        EstoqueProdutos.adicionarNoCarrinho(eletronico);
         console.log("Eletrônico cadastrado!\n");
-        GerenciandoLoja.cadastrarProduto() = eletronico;
+        prompt("Pressione Enter para continuar...");
+        this.perguntaDaOpcaoMenu();
     }
     perguntaRoupas() {
         let nome = prompt("Digite o nome da roupa: ");
@@ -149,8 +170,10 @@ class Perguntas {
         let tamanho = prompt("Digite o tamanho da roupa (P, M, G, GG): ");
         let material = prompt("Digite o material da roupa: ");
         const roupa = new ProdutoRoupa(nome, preço, categoria, descrição, tamanho, material);
+        EstoqueProdutos.adicionarNoCarrinho(roupa);
         console.log("Roupa cadastrada!\n");
-        GerenciandoLoja.cadastrarProduto() = roupa;
+        prompt("Pressione Enter para continuar...");
+        this.perguntaDaOpcaoMenu();
     }
 }
 module.exports = Perguntas;
