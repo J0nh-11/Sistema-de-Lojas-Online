@@ -8,13 +8,18 @@ const ProdutoAlimento = require('./produtoAlimento.js');
 
 
 class Perguntas {
+    constructor() {
+        this.compraP = [];
+    };
     perguntaDaOpcaoMenu() {
+        console.clear();
         this.escolha = prompt(`Menu Principal - Escolha uma opção:
     1 - Cadastrar produto;
     2 - Listar produtos;
     3 - Buscar produto;
     4 - Simular compra;
     5 - Sair do programa. \n `);
+
         switch (this.escolha) {
             case '1': {
                 console.log("Você escolheu a opção: Cadastrar produto\n");
@@ -30,6 +35,7 @@ class Perguntas {
             case '3': {
                 console.log("Você escolheu a opção: Buscar produto\n");
                 EstoqueProdutos.buscaPorCategoriaOuNome();
+                this.perguntaDaOpcaoMenu();
                 break;
             }
             case '4': {
@@ -46,8 +52,9 @@ class Perguntas {
                 break;
         }
 
-    }
+    };
     perguntaDaCompra() {
+        console.clear();
         this.escolha = prompt(`Escolha a categoria de produto que deseja ver:
     1 - Roupas;
     2 - Eletrônicos;
@@ -80,9 +87,12 @@ class Perguntas {
             }
             case '4': {
                 console.log("Você escolheu a opção: Carrinho\n");
-                if (EstoqueProdutos.produtos.length > 0) {
+                let listaCom = []
+                if (EstoqueProdutos.produtos.length > 0 ) {
                     console.log("Produtos no carrinho:");
                     EstoqueProdutos.produtos.forEach(prod => console.log(prod.getExibirInformações()));
+                   listaCom = EstoqueProdutos
+                   return this.compraP = listaCom;
                 } else {
                     console.log("Carrinho vazio.");
                 }
@@ -99,12 +109,14 @@ class Perguntas {
             default: console.log("Opção inválida. Por favor, escolha uma opção válida.");
                 this.perguntaDaCompra();
         }
-    }
+    };
     perguntaNomeCliente() {
+        console.clear();
         let nomeCliente = prompt("Por favor, digite seu nome: ");
         return nomeCliente;
-    }
+    };
     perguntaDoCarrinho() {
+        console.clear();
         this.escolha =
             prompt(`Escolha a categoria do produto que você quer adicionar?\n
              1 - Alimentos;\n
@@ -136,20 +148,27 @@ class Perguntas {
                 this.perguntaDoCarrinho();
                 break;
         }
-    }
+    };
     perguntasAlimentos() {
+        console.clear();
         let nome = prompt("Digite o nome do alimento: ");
         let preço = parseFloat(prompt("Digite o preço do alimento: "));
+        while(!isNaN) {
+            prompt('Digite um número.');
+        }
+        
         let categoria = prompt("Digite a categoria do alimento: ");
         let descrição = prompt("Digite a descrição do alimento: ");
         let validade = prompt("Digite a validade do alimento (ANO-MÊS-DIA): ");
         const alimento = new ProdutoAlimento(nome, preço, categoria, descrição, validade);
         EstoqueProdutos.adicionarNoCarrinho(alimento);
+        this.comprandoPro(alimento);
         console.log("Alimento cadastrado!\n");
         prompt("Pressione Enter para continuar...");
         this.perguntaDaOpcaoMenu();
-    }
+    };
     perguntaEletronicos() {
+        console.clear();
         let nome = prompt("Digite o nome do eletrônico: ");
         let preço = parseFloat(prompt("Digite o preço do eletrônico: "));
         let categoria = prompt("Digite a categoria do eletrônico: ");
@@ -158,11 +177,13 @@ class Perguntas {
         let garantia = prompt("Digite a garantia do eletrônico (em meses): ");
         const eletronico = new ProdutoEletronico(nome, preço, categoria, descrição, voltagem, garantia);
         EstoqueProdutos.adicionarNoCarrinho(eletronico);
+        this.comprandoPro(eletronico);
         console.log("Eletrônico cadastrado!\n");
         prompt("Pressione Enter para continuar...");
         this.perguntaDaOpcaoMenu();
-    }
+    };
     perguntaRoupas() {
+        console.clear();
         let nome = prompt("Digite o nome da roupa: ");
         let preço = parseFloat(prompt("Digite o preço da roupa: "));
         let categoria = prompt("Digite a categoria da roupa: ");
@@ -171,9 +192,27 @@ class Perguntas {
         let material = prompt("Digite o material da roupa: ");
         const roupa = new ProdutoRoupa(nome, preço, categoria, descrição, tamanho, material);
         EstoqueProdutos.adicionarNoCarrinho(roupa);
+        this.comprandoPro(roupa);
         console.log("Roupa cadastrada!\n");
         prompt("Pressione Enter para continuar...");
         this.perguntaDaOpcaoMenu();
+    };
+    comprandoPro(prodComprado) {
+        console.clear();
+        this.escolha = 
+        prompt(`Digite o produto que você quer adicionar no carrinho (S/N): `)
+        if (this.escolha.toLocaleLowerCase() === 's'|| this.escolha.toLocaleLowerCase() === 'n') {
+        prodComprado = EstoqueProdutos.getExibirInformaçõesDaLista.name;
+        }
+        if (prodComprado === true) {
+            console.log(EstoqueProdutos.adicionarNoCarrinho(prodComprado));
+            console.log('Produto adicionado no carrinho.');
+            this.perguntaDaCompra()
+        } 
+        else {
+            console.log('Produto não adicionado.');
+        }
+        this.perguntaDaOpcaoMenu();
     }
-}
+};
 module.exports = Perguntas;
