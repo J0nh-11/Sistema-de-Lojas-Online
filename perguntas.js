@@ -6,7 +6,7 @@ const ProdutoRoupa = require('./produtoRoupa.js');
 const ProdutoEletronico = require('./produtoEletronico.js');
 const ProdutoAlimento = require('./produtoAlimento.js');
 
-
+//Perguntas da loja;
 class Perguntas {
     constructor() {
         this.compraP = [];
@@ -85,12 +85,9 @@ class Perguntas {
             }
             case '4': {
                 console.log("Você escolheu a opção: Carrinho\n");
-                let listaCom = []
-                if (EstoqueProdutos.produtos.length > 0 ) {
+                if (EstoqueProdutos.produtos.length > 0) {
                     console.log("Produtos no carrinho:");
                     EstoqueProdutos.produtos.forEach(prod => console.log(prod.getExibirInformações()));
-                   listaCom = EstoqueProdutos
-                   return this.compraP = listaCom;
                 } else {
                     console.log("Carrinho vazio.");
                 }
@@ -148,10 +145,10 @@ class Perguntas {
     perguntasAlimentos() {
         let nome = prompt("Digite o nome do alimento: ");
         let preço = parseFloat(prompt("Digite o preço do alimento: "));
-        while(!isNaN) {
+        while (!isNaN) {
             prompt('Digite um número.');
         }
-        
+
         let categoria = prompt("Digite a categoria do alimento: ");
         let descrição = prompt("Digite a descrição do alimento: ");
         let validade = prompt("Digite a validade do alimento (ANO-MÊS-DIA): ");
@@ -191,25 +188,23 @@ class Perguntas {
         this.perguntaDaOpcaoMenu();
     };
     comprandoPro(prodComprado) {
-        this.escolha = 
-        prompt(`Digite o produto que você quer adicionar no carrinho (1 - Sim /2 - Não): `);
+        this.escolha =
+            prompt(`Adicionar '${prodComprado.getNome()}' ao carrinho? (1 - Sim / 2 - Não): `);
         switch (this.escolha) {
             case '1': {
-                prodComprado = EstoqueProdutos.getExibirInformaçõesDaLista.name;
-                console.log('Produto adicionado no carrinho.')
-                 console.log(EstoqueProdutos.adicionarNoCarrinho(prodComprado));
-                 this.perguntaDaCompra()
+                console.log('Produto já foi adicionado no carrinho.');
+                this.perguntaDaOpcaoMenu();
                 break;
             } case '2': {
                 console.log('Produto não adicionado.');
                 this.perguntaDaOpcaoMenu();
+                break;
             }
-                
-            default: {   console.log('Digite 1 ou 2. ');
-                this.comprandoPro();
-                  break;
+            default: {
+                console.log('Digite 1 ou 2.');
+                this.comprandoPro(prodComprado);
+                break;
             }
-              
         }
     }
 }

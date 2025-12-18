@@ -64,3 +64,7 @@ Resumo:m Criei novos métodos, aprendi a utilizar o static, instanceof e forech,
 Atividades de 17/12/2025
 
 RESUMO: A reta final, foi feita as opções listagem e busca de produto, eles ficaram prontas. Agora só preciso finalizar o carrinho de compras.
+
+Atividade de 18/12/2025
+
+RESUMO: Realizei as correções dos métodos e retirei as redundâncias.

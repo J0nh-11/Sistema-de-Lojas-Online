@@ -4,13 +4,12 @@ const produtoEletronico = require('./produtoEletronico.js');
 const produtoAlimento = require('./produtoAlimento.js');
 const Produto = require('./produto.js');
 
-class EstoqueProdutos{
+class EstoqueProdutos {
     static produtos = [];
     static adicionarNoCarrinho(produto) {
         this.produtos.push(produto);
     }
-    
-//Método de compra de roupas
+    //Método de compra de roupas
     static compraRoupa() {
         //Cria e apresenta os produtos
         const roupa1 = new produtoRoupa("Camiseta", 50.00, "Roupas", "Camiseta de algodão", "M", "Algodão");
@@ -19,7 +18,7 @@ class EstoqueProdutos{
         console.log(roupa1.getExibirInformações(), '\n\n',
             roupa2.getExibirInformações(), '\n\n',
             roupa3.getExibirInformações()), '\n\n';
-        
+
         // Lista produtos cadastrados dinamicamente
         if (this.produtos.length > 0) {
             console.log("Produtos cadastrados:");
@@ -41,7 +40,7 @@ class EstoqueProdutos{
         console.log(eletronico1.getExibirInformações(), '\n',
             eletronico2.getExibirInformações(), '\n',
             eletronico3.getExibirInformações()), '\n';
-        
+
         // Lista produtos cadastrados dinamicamente
         if (this.produtos.length > 0) {
             console.log("Produtos cadastrados:");
@@ -63,7 +62,7 @@ class EstoqueProdutos{
         console.log(alimento1.getExibirInformações(), '\n',
             alimento2.getExibirInformações(), '\n',
             alimento3.getExibirInformações()), '\n';
-        
+
         // Lista produtos cadastrados dinamicamente
         if (this.produtos.length > 0) {
             console.log("Produtos cadastrados:");
@@ -78,27 +77,27 @@ class EstoqueProdutos{
     }
     static getExibirInformaçõesDaLista() {
         console.log("=== PRODUTOS CADASTRADOS ===\n");
-        
+
         if (this.produtos.length === 0) {
             console.log("Nenhum produto cadastrado no carrinho.\n");
             return;
         }
-        
+
         // Separar por categoria
         const roupas = this.produtos.filter(prod => prod instanceof produtoRoupa);
         const eletronicos = this.produtos.filter(prod => prod instanceof produtoEletronico);
         const alimentos = this.produtos.filter(prod => prod instanceof produtoAlimento);
-        
+
         if (roupas.length > 0) {
             console.log("--- ROUPAS ---");
             roupas.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
         }
-        
+
         if (eletronicos.length > 0) {
             console.log("--- ELETRÔNICOS ---");
             eletronicos.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
         }
-        
+
         if (alimentos.length > 0) {
             console.log("--- ALIMENTOS ---");
             alimentos.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
@@ -106,31 +105,31 @@ class EstoqueProdutos{
     }
     static buscaPorCategoriaOuNome() {
         console.log("== BUSCA DE PROUTOS ==\n");
-        
+
         if (this.produtos.length === 0) {
             console.log("Nenhum produto para busca.\n");
             return;
         }
-        
+
         // Separar por categoria
         const roupas = this.produtos.filter(prod => prod instanceof produtoRoupa);
         const eletronicos = this.produtos.filter(prod => prod instanceof produtoEletronico);
         const alimentos = this.produtos.filter(prod => prod instanceof produtoAlimento);
-        
+
         if (roupas.length > 0) {
             console.log("--- ROUPAS ---");
             roupas.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
         }
-        
+
         if (eletronicos.length > 0) {
             console.log("--- ELETRÔNICOS ---");
             eletronicos.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
         }
-        
+
         if (alimentos.length > 0) {
             console.log("--- ALIMENTOS ---");
             alimentos.forEach(prod => console.log(prod.getExibirInformações(), '\n'));
         }
     }
 }
-    module.exports = EstoqueProdutos;
+module.exports = EstoqueProdutos;
