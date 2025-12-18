@@ -12,7 +12,6 @@ class Perguntas {
         this.compraP = [];
     };
     perguntaDaOpcaoMenu() {
-        console.clear();
         this.escolha = prompt(`Menu Principal - Escolha uma opção:
     1 - Cadastrar produto;
     2 - Listar produtos;
@@ -54,7 +53,6 @@ class Perguntas {
 
     };
     perguntaDaCompra() {
-        console.clear();
         this.escolha = prompt(`Escolha a categoria de produto que deseja ver:
     1 - Roupas;
     2 - Eletrônicos;
@@ -111,12 +109,10 @@ class Perguntas {
         }
     };
     perguntaNomeCliente() {
-        console.clear();
         let nomeCliente = prompt("Por favor, digite seu nome: ");
         return nomeCliente;
     };
     perguntaDoCarrinho() {
-        console.clear();
         this.escolha =
             prompt(`Escolha a categoria do produto que você quer adicionar?\n
              1 - Alimentos;\n
@@ -150,7 +146,6 @@ class Perguntas {
         }
     };
     perguntasAlimentos() {
-        console.clear();
         let nome = prompt("Digite o nome do alimento: ");
         let preço = parseFloat(prompt("Digite o preço do alimento: "));
         while(!isNaN) {
@@ -168,7 +163,6 @@ class Perguntas {
         this.perguntaDaOpcaoMenu();
     };
     perguntaEletronicos() {
-        console.clear();
         let nome = prompt("Digite o nome do eletrônico: ");
         let preço = parseFloat(prompt("Digite o preço do eletrônico: "));
         let categoria = prompt("Digite a categoria do eletrônico: ");
@@ -183,7 +177,6 @@ class Perguntas {
         this.perguntaDaOpcaoMenu();
     };
     perguntaRoupas() {
-        console.clear();
         let nome = prompt("Digite o nome da roupa: ");
         let preço = parseFloat(prompt("Digite o preço da roupa: "));
         let categoria = prompt("Digite a categoria da roupa: ");
@@ -198,21 +191,26 @@ class Perguntas {
         this.perguntaDaOpcaoMenu();
     };
     comprandoPro(prodComprado) {
-        console.clear();
         this.escolha = 
-        prompt(`Digite o produto que você quer adicionar no carrinho (S/N): `)
-        if (this.escolha.toLocaleLowerCase() === 's'|| this.escolha.toLocaleLowerCase() === 'n') {
-        prodComprado = EstoqueProdutos.getExibirInformaçõesDaLista.name;
+        prompt(`Digite o produto que você quer adicionar no carrinho (1 - Sim /2 - Não): `);
+        switch (this.escolha) {
+            case '1': {
+                prodComprado = EstoqueProdutos.getExibirInformaçõesDaLista.name;
+                console.log('Produto adicionado no carrinho.')
+                 console.log(EstoqueProdutos.adicionarNoCarrinho(prodComprado));
+                 this.perguntaDaCompra()
+                break;
+            } case '2': {
+                console.log('Produto não adicionado.');
+                this.perguntaDaOpcaoMenu();
+            }
+                
+            default: {   console.log('Digite 1 ou 2. ');
+                this.comprandoPro();
+                  break;
+            }
+              
         }
-        if (prodComprado === true) {
-            console.log(EstoqueProdutos.adicionarNoCarrinho(prodComprado));
-            console.log('Produto adicionado no carrinho.');
-            this.perguntaDaCompra()
-        } 
-        else {
-            console.log('Produto não adicionado.');
-        }
-        this.perguntaDaOpcaoMenu();
     }
-};
+}
 module.exports = Perguntas;

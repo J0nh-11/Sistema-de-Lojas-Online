@@ -59,3 +59,8 @@ Para que eu consiga ser um bom profissional. Boa parte do código foi melhorada 
 Atividades de 16/12/2025
 
 Resumo:m Criei novos métodos, aprendi a utilizar o static, instanceof e forech, coisas que eu não usava antes. Melhorei um pouco mais em módulos. Confesso que o código não está 100% feito por mim, pois o método de vencimento e a listagem de produtos cadastrados quem fez foi o chat quando corrigiu, conseguii entender a lógica do que ele fez e isso me alegrou. Estou quase finalizando o projeto, todavia, vi que é importante sempre treinar programação, fazer códigos complexos ajudam em projetos desse tipo.
+
+
+Atividades de 17/12/2025
+
+RESUMO: A reta final, foi feita as opções listagem e busca de produto, eles ficaram prontas. Agora só preciso finalizar o carrinho de compras.
